@@ -5,6 +5,11 @@ const app = express();
 app.use(bodyParser.json());
 
 const PORT = 8000;
+
+app.get("/", (req, res) => {
+    res.redirect("/bhfl");
+});
+
 app.get("/bhfl", (req, res) => {
     try {
         return res.status(200).send({ operation_code: 1 })
